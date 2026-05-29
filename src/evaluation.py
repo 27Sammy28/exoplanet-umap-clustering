@@ -1,4 +1,4 @@
-"""Evaluation, PVP, and PAGER scoring utilities."""
+""" Evaluation, PVP, and PAGER scoring utilities."""
 from __future__ import annotations
 
 import numpy as np
