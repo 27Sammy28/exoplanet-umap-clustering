@@ -1,0 +1,4 @@
+Method,Silhouette Score,Davies-Bouldin Index
+UMAP,0.4856,0.69
+TSNE,0.402,0.7967
+PCA,0.3373,1.0085

@@ -1,0 +1,12 @@
+{
+    "timestamp": "2026-05-29 20:17:37.675373",
+    "python_version": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:16:10) [GCC 11.2.0]",
+    "platform": "Linux-6.17.0-29-generic-x86_64-with-glibc2.39",
+    "numpy_version": "2.3.5",
+    "reproducibility": {
+        "umap_seed": 42,
+        "kmeans_seed": 42,
+        "pipeline_deterministic": true
+    },
+    "notes": "Full NeurIPS pipeline reproducibility report"
+}

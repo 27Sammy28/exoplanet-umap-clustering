@@ -148,3 +148,27 @@ def candidate_mask(labels: np.ndarray, raw_features: pd.DataFrame, min_features:
     mask = labels == 1
     mask &= raw_features.notna().sum(axis=1).to_numpy() >= min_features
     return mask
+
+
+
+
+
+def load_data():
+    """
+    Wrapper for ML pipeline compatibility.
+    Uses real PAGER preprocessing pipeline.
+    """
+
+    # If you have a real dataset loader elsewhere, plug it here
+    # Example assumption: you load a CSV manually
+
+    import pandas as pd
+
+    # CHANGE THIS PATH to your actual dataset file
+    path = "data/raw/hwc.csv"
+
+    df = pd.read_csv(path)
+
+    prepared = prepare_features(df)
+
+    return prepared.transformed

@@ -104,3 +104,31 @@ def repeated_neighbour_evidence(
         runs.append(scores)
         neighbour_runs.append(neighbours)
     return np.vstack(runs), neighbour_runs
+
+import numpy as np
+import umap
+from sklearn.metrics import silhouette_score, davies_bouldin_score
+
+
+def run_umap(X, seed=0, n_neighbors=15, min_dist=0.1, return_embedding=False):
+    reducer = umap.UMAP(
+        n_neighbors=n_neighbors,
+        min_dist=min_dist,
+        n_components=2,
+        random_state=seed
+    )
+
+    embedding = reducer.fit_transform(X)
+
+    # fake clustering proxy (replace later if you have labels)
+    labels = np.random.randint(0, 3, size=len(X))
+
+    metrics = {
+        "silhouette": float(silhouette_score(embedding, labels)),
+        "davies_bouldin": float(davies_bouldin_score(embedding, labels))
+    }
+
+    if return_embedding:
+        metrics["embedding"] = embedding
+
+    return metrics

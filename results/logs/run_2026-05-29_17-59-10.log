@@ -1,0 +1,36 @@
+==============================
+NeurIPS Pipeline Started
+Timestamp: 2026-05-29_17-59-10
+==============================
+[1/4] Running experiment...
+2026-05-29 17:59:15.926639: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2026-05-29 17:59:15.926877: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-05-29 17:59:15.966639: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-05-29 17:59:17.093656: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-05-29 17:59:17.094006: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+/home/samuelbogale2026/anaconda3/lib/python3.13/site-packages/umap/umap_.py:1952: UserWarning: n_jobs value 1 overridden to 1 by setting random_state. Use no seed for parallelism.
+  warn(
+Loading data...
+Running UMAP...
+Saved results successfully
+[2/4] Generating table...
+         Method  Silhouette  Davies-Bouldin  Physics-Consistency
+0           PCA        0.33            1.00                 0.10
+1         t-SNE        0.40            0.79                 0.15
+2          UMAP        0.48            0.69                 0.28
+3  Physics-UMAP        0.46            0.84                 0.35
+Saved table.
+[3/4] Generating figures...
+2026-05-29 17:59:45.576170: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2026-05-29 17:59:45.576435: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-05-29 17:59:45.621166: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-05-29 17:59:46.720965: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-05-29 17:59:46.721381: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+/home/samuelbogale2026/anaconda3/lib/python3.13/site-packages/umap/umap_.py:1952: UserWarning: n_jobs value 1 overridden to 1 by setting random_state. Use no seed for parallelism.
+  warn(
+qt.qpa.plugin: Could not find the Qt platform plugin "wayland" in ""
+Saved NeurIPS figure.
+[4/4] Creating reproducibility report...
+python: can't open file '/home/samuelbogale2026/exoplanet-umap-clustering/exoplanet-umap-clustering/scripts/make_report.py': [Errno 2] No such file or directory
