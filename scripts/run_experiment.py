@@ -1,6 +1,7 @@
-import numpy as np
-import random
+import json
+import os
 
-SEED = 42
-np.random.seed(SEED)
-random.seed(SEED)
+os.makedirs("results/metrics", exist_ok=True)
+
+with open("results/metrics/umap_results.json", "w") as f:
+    json.dump(metrics, f, indent=4)
