@@ -29,7 +29,7 @@ Pipeline overview:
 1. Data preprocessing and feature cleaning
 2. Missing-value handling and normalization
 3. UMAP manifold embedding
-4. Clustering analysis using KMeans
+4. Clustering analysis using K-MeansStructure
 5. Cluster validation and robustness analysis
 
 ---
