@@ -1,4 +1,4 @@
-UMAP-Based Representation Learning and Clustering for Exoplanet Population Structure Analysis
+# UMAP-Based Representation Learning and Clustering for Exoplanet Population Structure Analysis
 
 # Abstract
 
@@ -13,7 +13,7 @@ Exoplanet catalogs contain high-dimensional, noisy, and partially correlated phy
 
 This work addresses the following research question:
 
-Do exoplanet populations exhibit stable nonlinear manifold structure that enables unsupervised discovery of physically meaningful groupings beyond linear projection methods?
+Do exoplanet populations exhibit a stable nonlinear manifold structure that enables unsupervised discovery of physically meaningful groupings beyond linear projection methods?
 
 # Key Contributions
 
