@@ -206,13 +206,13 @@ This repository includes a combined visual comparison of PCA, UMAP, and t-SNE em
 ### Habitable-Subset UMAP Representation
 
 <p align="center">
-  <img src="My_file/5_regenerated.png" width="700" alt="UMAP representation of conservative and optimistic habitable candidates">
+  <img src="figures/umap_habitable_subset.png" width="700" alt="UMAP representation of conservative and optimistic habitable candidates">
 </p>
 
 ### Physics-Audit Distribution
 
 <p align="center">
-  <img src="physics_habitability_distribution.png" width="700" alt="Physics-informed habitability distribution">
+  <img src="figures/physics_habitability_distribution.png" width="700" alt="Physics-informed habitability distribution">
 </p>
 
 ---
