@@ -191,7 +191,7 @@ The results indicate strong reproducibility and stability of the learned manifol
 
 ### PCA Representation
 
-![PCA embedding](results/figures/pca_embedding.pmg)
+![PCA embedding](results/figures/pca_embedding.png)
 
 ### UMAP Representation
 
@@ -207,13 +207,6 @@ This repository includes a combined visual comparison of PCA, UMAP, and t-SNE em
 
 ![PCA, UMAP, and t-SNE comparison](results/figures/pca_umap_tsne_comparison.png)
 
-### UMAP Representation with KNN Decision Geometry
-
-![UMAP representation with KNN decision geometry](results/figures/umap_knn_geometry.png)
-
-### Habitable-Subset UMAP Representation
-
-![UMAP representation of conservative and optimistic habitable candidates](results/figures/umap_habitable_subset.png)
 
 ### Physics-Audit Distribution
 
