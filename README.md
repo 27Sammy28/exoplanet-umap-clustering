@@ -12,7 +12,7 @@ Traditional approaches often rely on predefined classifications or linear statis
 
 This project investigates whether exoplanet populations exhibit an underlying nonlinear manifold structure that can be recovered through unsupervised representation learning.
 
-Rather than focusing on prediction, the goal is scientific discovery: uncovering latent geometric organization within exoplanet datasets and evaluating whether this organization corresponds to physically meaningful planetary regimes.
+Rather than focusing only on prediction, the goal is scientific discovery: uncovering latent geometric organization within exoplanet datasets and evaluating whether this organization corresponds to physically meaningful planetary regimes.
 
 ---
 
@@ -41,7 +41,7 @@ Furthermore, incorporating domain-informed constraints improves astrophysical in
 * Principal Component Analysis (PCA) baseline
 * t-Distributed Stochastic Neighbor Embedding (t-SNE)
 * Uniform Manifold Approximation and Projection (UMAP)
-* Physics-Informed UMAP extension
+* Physics-informed UMAP-style audit extension
 
 ### Scientific Evaluation Framework
 
@@ -55,7 +55,7 @@ Furthermore, incorporating domain-informed constraints improves astrophysical in
 * Discovery of latent exoplanet population structure
 * Comparison of linear and nonlinear representations
 * Analysis of geometry-versus-physics trade-offs
-* Reproducible Scientific Machine Learning workflow
+* Reproducible scientific machine-learning workflow
 
 ---
 
@@ -97,16 +97,16 @@ Scientific Interpretation
 
 The framework operates on astrophysical variables including:
 
-* Planet Mass
-* Planet Radius
-* Orbital Period
-* Semi-Major Axis
-* Equilibrium Temperature
-* Stellar Mass
-* Stellar Radius
-* Stellar Effective Temperature
+* Planet mass
+* Planet radius
+* Orbital period
+* Semi-major axis
+* Equilibrium temperature
+* Stellar mass
+* Stellar radius
+* Stellar effective temperature
 
-Additional planetary and stellar parameters may be incorporated depending on catalog availability.
+Additional planetary and stellar parameters may be incorporated depending on catalogue availability.
 
 ---
 
@@ -114,10 +114,10 @@ Additional planetary and stellar parameters may be incorporated depending on cat
 
 To assess both geometric quality and scientific relevance, multiple evaluation criteria are employed.
 
-| Metric                          | Purpose                                 |
-| ------------------------------- | --------------------------------------- |
-| Silhouette Score                | Measures cluster separability           |
-| Davies–Bouldin Index            | Measures cluster compactness            |
+| Metric | Purpose |
+| --- | --- |
+| Silhouette Score | Measures cluster separability |
+| Davies--Bouldin Index | Measures cluster compactness |
 | Physics Consistency Score (PCS) | Measures astrophysical interpretability |
 
 ---
@@ -144,12 +144,12 @@ This metric complements traditional clustering measures by emphasizing scientifi
 
 ### Embedding Performance
 
-| Method       | Silhouette ↑ | Davies–Bouldin ↓ | Physics Consistency ↑ |
-| ------------ | ------------ | ---------------- | --------------------- |
-| PCA          | 0.33         | 1.00             | 0.10                  |
-| t-SNE        | 0.40         | 0.79             | 0.15                  |
-| UMAP         | **0.48**     | **0.69**         | 0.28                  |
-| Physics-UMAP | 0.46         | 0.84             | **0.35**              |
+| Method | Silhouette ↑ | Davies--Bouldin ↓ | Physics Consistency ↑ |
+| --- | --- | --- | --- |
+| PCA | 0.33 | 1.00 | 0.10 |
+| t-SNE | 0.40 | 0.79 | 0.15 |
+| UMAP | **0.48** | **0.69** | 0.28 |
+| Physics-UMAP | 0.46 | 0.84 | **0.35** |
 
 ---
 
@@ -177,11 +177,11 @@ Physics-informed embeddings improve astrophysical interpretability while slightl
 
 ## UMAP Stability Analysis
 
-| Metric                   | Average |
-| ------------------------ | ------- |
-| Silhouette Score         | ~0.495  |
-| Davies–Bouldin Index     | ~0.67   |
-| Variability Across Seeds | Low     |
+| Metric | Average |
+| --- | --- |
+| Silhouette Score | ~0.495 |
+| Davies--Bouldin Index | ~0.67 |
+| Variability Across Seeds | Low |
 
 The results indicate strong reproducibility and stability of the learned manifold structure.
 
@@ -189,22 +189,30 @@ The results indicate strong reproducibility and stability of the learned manifol
 
 ## Visual Comparison
 
-### PCA Representation
+### PCA, UMAP, and t-SNE Representation Comparison
+
+This repository includes a combined visual comparison of PCA, UMAP, and t-SNE embeddings.
 
 <p align="center">
-<img src="figures/pca.png" width="700">
+  <img src="figures/pca_umap_tsne_comparison.png" width="850" alt="PCA, UMAP, and t-SNE comparison for exoplanet representation learning">
 </p>
 
-### UMAP Representation
+### UMAP Representation with KNN Decision Geometry
 
 <p align="center">
-<img src="figures/umap.png" width="700">
+  <img src="figures/fig6_umap_knn_publication.png" width="700" alt="UMAP representation with KNN decision geometry">
 </p>
 
-### t-SNE Representation
+### Habitable-Subset UMAP Representation
 
 <p align="center">
-<img src="figures/tsne.png" width="700">
+  <img src="My_file/5_regenerated.png" width="700" alt="UMAP representation of conservative and optimistic habitable candidates">
+</p>
+
+### Physics-Audit Distribution
+
+<p align="center">
+  <img src="physics_habitability_distribution.png" width="700" alt="Physics-informed habitability distribution">
 </p>
 
 ---
@@ -271,13 +279,17 @@ Because the methodology is domain-agnostic, it can be extended to other scientif
 
 ```bash
 git clone https://github.com/yourusername/exoplanet-umap-analysis.git
-
 cd exoplanet-umap-analysis
-
 pip install -r requirements.txt
-
 python main.py
 ```
+
+Core reusable modules include:
+
+* `preprocess.py` — catalogue loading, feature mapping, scaling inputs
+* `embedding.py` — PCA and repeated nearest-neighbour representation evidence
+* `clustering.py` — lightweight clustering diagnostics
+* `evaluation.py` — physics consistency, PAGER scoring, and ranking metrics
 
 ---
 
@@ -309,7 +321,7 @@ More broadly, the project demonstrates how Scientific Machine Learning can be us
 ```bibtex
 @software{worku2026umap_exoplanets,
   author = {Samuel Worku},
-  title = {PAGER: A Physics-Audited Exoplanet Follow-up Prioritisation Framework.}
+  title = {PAGER: A Physics-Audited Exoplanet Follow-up Prioritisation Framework},
   year = {2026},
   url = {https://github.com/yourusername/exoplanet-umap-analysis}
 }
