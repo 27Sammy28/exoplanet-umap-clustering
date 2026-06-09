@@ -191,33 +191,33 @@ The results indicate strong reproducibility and stability of the learned manifol
 
 ### PCA Representation
 
-![PCA embedding](figures/readme/pca_embedding.png)
+![PCA embedding](results/figures/pca_embedding.pmg)
 
 ### UMAP Representation
 
-![UMAP embedding](figures/readme/umap_embedding.png)
+![UMAP embedding](results/figures/umap_embedding.png)
 
 ### t-SNE Representation
 
-![t-SNE embedding](figures/readme/tsne_embedding.png)
+![t-SNE embedding](results/figures/tsne_embedding.png)
 
 ### PCA, UMAP, and t-SNE Representation Comparison
 
 This repository includes a combined visual comparison of PCA, UMAP, and t-SNE embeddings.
 
-![PCA, UMAP, and t-SNE comparison](figures/readme/pca_umap_tsne_comparison.png)
+![PCA, UMAP, and t-SNE comparison](results/figures/pca_umap_tsne_comparison.png)
 
 ### UMAP Representation with KNN Decision Geometry
 
-![UMAP representation with KNN decision geometry](figures/readme/umap_knn_geometry.png)
+![UMAP representation with KNN decision geometry](results/figures/umap_knn_geometry.png)
 
 ### Habitable-Subset UMAP Representation
 
-![UMAP representation of conservative and optimistic habitable candidates](figures/readme/umap_habitable_subset.png)
+![UMAP representation of conservative and optimistic habitable candidates](results/figures/umap_habitable_subset.png)
 
 ### Physics-Audit Distribution
 
-![Physics-informed habitability distribution](figures/readme/physics_habitability_distribution.png)
+![Physics-informed habitability distribution](results/figures/physics_habitability_distribution.png)
 
 ---
 
