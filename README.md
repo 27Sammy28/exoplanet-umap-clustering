@@ -1,219 +1,316 @@
-# UMAP-Based Representation Learning and Clustering for Exoplanet Population Structure Analysis
+# UMAP-Based Representation Learning and Clustering for Exoplanet Population Structure Discovery
+
+### Investigating Nonlinear Manifold Structure in High-Dimensional Exoplanet Data
 
 ---
 
-## Abstract
+## Scientific Motivation
 
-This project investigates whether nonlinear manifold learning can uncover stable and physically meaningful structure in high-dimensional exoplanet datasets. I apply Uniform Manifold Approximation and Projection (UMAP) to construct low-dimensional representations of astrophysical features, followed by unsupervised clustering to analyze latent population structure.
+The discovery of thousands of exoplanets has transformed planetary science into a data-rich field. As observational surveys continue to expand, understanding how planetary systems are organized within high-dimensional parameter space has become an increasingly important challenge.
 
-I evaluate whether these representations preserve meaningful separability of exoplanet groups and whether clustering remains stable under variations in embedding parameters and initialization. I also compare nonlinear methods (UMAP and t-SNE) against linear baselines (PCA) to assess their effectiveness in capturing structure in scientific datasets.
+Traditional approaches often rely on predefined classifications or linear statistical techniques, which may fail to capture complex nonlinear relationships among planetary and stellar properties.
+
+This project investigates whether exoplanet populations exhibit an underlying nonlinear manifold structure that can be recovered through unsupervised representation learning.
+
+Rather than focusing on prediction, the goal is scientific discovery: uncovering latent geometric organization within exoplanet datasets and evaluating whether this organization corresponds to physically meaningful planetary regimes.
 
 ---
 
-## Research Objective
+## Research Question
 
-Exoplanet datasets contain complex nonlinear relationships between physical variables such as mass, radius, orbital period, and temperature. Traditional linear projection methods often fail to capture these relationships.
+> Do exoplanet populations exhibit stable nonlinear manifold structure that can be recovered through unsupervised representation learning methods beyond traditional linear dimensionality reduction?
 
-This work investigates the following research question:
+---
 
-> Do exoplanet populations exhibit a stable nonlinear manifold structure that can be discovered through unsupervised representation learning methods beyond linear dimensionality reduction?
+## Main Scientific Finding
+
+The results suggest that exoplanets are not uniformly distributed throughout parameter space.
+
+Across multiple experiments and embedding methods, UMAP consistently reveals stable low-dimensional structure that is significantly less apparent under linear projection methods such as PCA.
+
+The findings provide evidence that exoplanet populations occupy partially separable nonlinear regions shaped by relationships among planetary and stellar properties.
+
+Furthermore, incorporating domain-informed constraints improves astrophysical interpretability, highlighting the potential of physics-aware machine learning for scientific discovery.
 
 ---
 
 ## Key Contributions
 
-This project provides:
+### Representation Learning Framework
 
-- A complete UMAP-based representation learning pipeline for exoplanet data  
-- A clustering framework for latent structure discovery  
-- A robustness analysis across multiple embedding runs  
-- A quantitative comparison of PCA, t-SNE, and UMAP  
-- A physics-consistency evaluation of learned representations  
-- A reproducible workflow for scientific machine learning experiments  
+* Principal Component Analysis (PCA) baseline
+* t-Distributed Stochastic Neighbor Embedding (t-SNE)
+* Uniform Manifold Approximation and Projection (UMAP)
+* Physics-Informed UMAP extension
+
+### Scientific Evaluation Framework
+
+* Geometric clustering assessment
+* Embedding robustness analysis
+* Multi-seed reproducibility testing
+* Physics-consistency evaluation
+
+### Scientific Insights
+
+* Discovery of latent exoplanet population structure
+* Comparison of linear and nonlinear representations
+* Analysis of geometry-versus-physics trade-offs
+* Reproducible Scientific Machine Learning workflow
 
 ---
 
 ## Methodology
 
-### Data Processing
-- Feature selection from exoplanet catalog attributes  
-- Handling missing values  
-- Normalization and scaling of physical features  
+```text
+Exoplanet Catalog
+        │
+        ▼
+Data Preprocessing
+        │
+        ▼
+Feature Engineering
+        │
+        ▼
+Feature Scaling
+        │
+        ▼
+Representation Learning
+(PCA / t-SNE / UMAP)
+        │
+        ▼
+Latent Embedding Space
+        │
+        ▼
+Clustering Analysis
+(K-Means)
+        │
+        ▼
+Robustness Evaluation
+        │
+        ▼
+Scientific Interpretation
+```
 
-### Representation Learning
-- PCA (linear baseline)  
-- t-SNE (local structure baseline)  
-- UMAP (nonlinear manifold learning)  
-- Physics-informed UMAP variant  
+---
 
-### Clustering
-- K-Means clustering in embedded space  
-- Cluster assignment across different methods  
+## Dataset Features
 
-### Robustness Analysis
-- Multi-seed stability evaluation  
-- Sensitivity analysis of UMAP parameters  
-- Cluster consistency across runs  
+The framework operates on astrophysical variables including:
+
+* Planet Mass
+* Planet Radius
+* Orbital Period
+* Semi-Major Axis
+* Equilibrium Temperature
+* Stellar Mass
+* Stellar Radius
+* Stellar Effective Temperature
+
+Additional planetary and stellar parameters may be incorporated depending on catalog availability.
 
 ---
 
 ## Evaluation Metrics
 
-The performance of each method is evaluated using:
+To assess both geometric quality and scientific relevance, multiple evaluation criteria are employed.
 
-- **Silhouette Score** (higher is better)  
-- **Davies–Bouldin Index** (lower is better)  
-- **Physics Consistency Score** (higher is better, measures alignment with physical structure)  
+| Metric                          | Purpose                                 |
+| ------------------------------- | --------------------------------------- |
+| Silhouette Score                | Measures cluster separability           |
+| Davies–Bouldin Index            | Measures cluster compactness            |
+| Physics Consistency Score (PCS) | Measures astrophysical interpretability |
+
+---
+
+## Physics Consistency Score (PCS)
+
+Traditional clustering metrics evaluate geometric structure but do not assess scientific meaning.
+
+To address this limitation, a Physics Consistency Score (PCS) is introduced.
+
+PCS evaluates whether discovered clusters correspond to distinct physical regimes by measuring cluster-level variation across key astrophysical parameters.
+
+### Interpretation
+
+* PCS ≈ 0 → little physical distinction between clusters
+* Higher PCS → stronger alignment with astrophysical structure
+* High PCS clusters are more likely to represent meaningful planetary populations
+
+This metric complements traditional clustering measures by emphasizing scientific relevance rather than purely geometric separation.
 
 ---
 
 ## Results
 
-### Main Comparison
+### Embedding Performance
 
-| Method | Silhouette ↑ | Davies-Bouldin ↓ | Physics Consistency ↑ |
-|--------|--------------|------------------|------------------------|
-| PCA | 0.33 | 1.00 | 0.10 |
-| t-SNE | 0.40 | 0.79 | 0.15 |
-| UMAP | 0.48 | 0.69 | 0.28 |
-| Physics-UMAP | 0.46 | 0.84 | 0.35 |
-
----
-
-### Interpretation
-
-- PCA fails to capture nonlinear structure due to its linear nature  
-- t-SNE improves local clustering but lacks global consistency  
-- UMAP achieves the best balance between separability and structure preservation  
-- Physics-UMAP improves interpretability but slightly reduces clustering compactness  
+| Method       | Silhouette ↑ | Davies–Bouldin ↓ | Physics Consistency ↑ |
+| ------------ | ------------ | ---------------- | --------------------- |
+| PCA          | 0.33         | 1.00             | 0.10                  |
+| t-SNE        | 0.40         | 0.79             | 0.15                  |
+| UMAP         | **0.48**     | **0.69**         | 0.28                  |
+| Physics-UMAP | 0.46         | 0.84             | **0.35**              |
 
 ---
 
-### UMAP Stability Analysis
+## Key Findings
 
-Across multiple runs, UMAP shows consistent clustering behavior:
+### Nonlinear Methods Outperform Linear Projections
 
-- Mean Silhouette Score ≈ **0.495**  
-- Stable Davies–Bouldin Index (~0.67–0.68 range)  
-- Low variance across different random seeds  
+PCA struggles to separate exoplanet populations due to its linear assumptions.
 
-This indicates strong embedding stability and reproducibility.
+Both UMAP and t-SNE reveal structure that is largely hidden in linear embeddings.
+
+### UMAP Produces the Most Balanced Representation
+
+UMAP achieves the strongest overall performance by simultaneously preserving local relationships and maintaining meaningful global organization.
+
+### Stable Across Random Initializations
+
+Repeated experiments demonstrate low variance across embedding runs, indicating that the recovered structure is not simply an artifact of stochastic optimization.
+
+### Geometry and Physics Are Not Identical Objectives
+
+Physics-informed embeddings improve astrophysical interpretability while slightly reducing geometric compactness, revealing an important trade-off between mathematical clustering quality and scientific meaning.
 
 ---
 
-### Representation Learning Comparison
+## UMAP Stability Analysis
 
-| PCA | UMAP | t-SNE |
-|-----|------|-------|
-| (see figure) | (see figure) | (see figure) |
+| Metric                   | Average |
+| ------------------------ | ------- |
+| Silhouette Score         | ~0.495  |
+| Davies–Bouldin Index     | ~0.67   |
+| Variability Across Seeds | Low     |
 
-**Observations:**
+The results indicate strong reproducibility and stability of the learned manifold structure.
 
-- PCA does not separate structure effectively  
-- UMAP reveals clearer and more coherent latent grouping  
-- t-SNE emphasizes local structure but distorts global relationships  
+---
 
-This indicates that geometric cluster quality and physical interpretability are not always aligned, highlighting the importance of multi-objective evaluation in scientific machine learning.
+## Visual Comparison
+
+### PCA Representation
+
+<p align="center">
+<img src="figures/pca.png" width="700">
+</p>
+
+### UMAP Representation
+
+<p align="center">
+<img src="figures/umap.png" width="700">
+</p>
+
+### t-SNE Representation
+
+<p align="center">
+<img src="figures/tsne.png" width="700">
+</p>
+
 ---
 
 ## Scientific Significance
 
-This work contributes to scientific machine learning, where the goal is not only prediction but also understanding structure in complex datasets.
+This work contributes to the growing field of Scientific Machine Learning (SciML), where machine learning is used not only for prediction but also for understanding scientific systems.
 
-In the context of exoplanet science, this approach provides a complementary perspective to traditional classification by focusing on latent geometric structure in parameter space.
+The project demonstrates how manifold learning can be used to:
 
-## Scientific Insight
+* Explore exoplanet population structure
+* Discover latent organization in astrophysical datasets
+* Generate interpretable scientific hypotheses
+* Investigate nonlinear physical relationships
+* Support data-driven scientific discovery
 
-Beyond evaluating clustering performance, this work provides insight into the underlying structure of exoplanet parameter space.
+---
 
-The results suggest that exoplanet populations are not uniformly distributed in feature space but instead form partially separable regions that are more clearly revealed through nonlinear embeddings. In particular, UMAP consistently uncovers structured groupings that are not as apparent under linear projection (PCA), indicating the presence of nonlinear relationships between physical planetary properties.
+## Potential Research Impact
 
-A key observation is that clustering stability remains relatively consistent across multiple embedding runs, suggesting that the discovered structure is not purely an artifact of initialization but reflects persistent geometric relationships in the data.
+The proposed framework may contribute to future research in:
 
-However, the comparison between geometric clustering quality and physics-informed consistency shows an important trade-off: improving alignment with physical properties can slightly reduce cluster compactness. This indicates that purely geometry-driven optimization may not fully align with physically meaningful structure, motivating the need for hybrid approaches that incorporate domain constraints.
+* Exoplanet population studies
+* Planet formation regime identification
+* Habitability space exploration
+* Rare planetary system discovery
+* Physics-informed representation learning
+* Machine learning for scientific discovery
 
-Overall, the findings support the hypothesis that exoplanet populations exhibit latent manifold structure that can be partially recovered using nonlinear representation learning methods.
-
-## Physics Consistency Score (Definition)
-
-To evaluate whether clusters correspond to physically meaningful groupings, a Physics Consistency Score (PCS) is computed.
-
-This metric measures how strongly clustered groups align with key physical attributes of exoplanets, such as radius, mass, orbital period, and equilibrium temperature.
-
-### Definition
-
-For each cluster:
-
-1. Compute the mean of each physical feature within the cluster
-2. Compare cluster-level feature variance against global dataset variance
-3. Measure how much each cluster deviates from the overall population structure
-
-The final score is defined as:
-
-- Higher values indicate that clusters correspond to more distinct physical regimes
-- Lower values indicate clusters that are not meaningfully different in physical space
-
-### Interpretation
-
-- PCS ≈ 0 → clusters do not reflect physical structure  
-- PCS → higher values indicate stronger alignment with astrophysical properties  
-- PCS is used as a complementary metric to geometric clustering scores (Silhouette, Davies-Bouldin)
-
-### Purpose
-
-Unlike standard clustering metrics, Physics Consistency is designed to evaluate whether learned representations preserve scientifically meaningful structure rather than purely geometric separability.
+Because the methodology is domain-agnostic, it can be extended to other scientific fields involving high-dimensional physical systems.
 
 ---
 
 ## Limitations
 
-- Clustering is unsupervised and not validated against ground-truth astrophysical labels  
-- Results depend on UMAP hyperparameters  
-- Further astrophysical validation is required for scientific interpretation  
+* No ground-truth astrophysical population labels
+* Dependence on embedding hyperparameters
+* Limited astrophysical validation
+* Exploratory interpretation of discovered clusters
 
 ---
 
 ## Future Work
 
-- Incorporate HDBSCAN for density-based clustering  
-- Add physics-informed feature engineering  
-- Improve uncertainty estimation in embeddings  
-- Extend to graph-based representation learning  
-- Perform deeper astrophysical validation of clusters  
+### Machine Learning Extensions
+
+* HDBSCAN clustering
+* Contrastive representation learning
+* Variational autoencoders
+* Self-supervised learning
+* Graph neural networks
+
+### Scientific Extensions
+
+* Planet formation regime analysis
+* Habitability manifold exploration
+* Uncertainty-aware embeddings
+* Physics-constrained representation learning
+* Integration with theoretical planetary evolution models
 
 ---
 
 ## Reproducibility
 
-This project is designed for reproducible scientific experimentation.
+```bash
+git clone https://github.com/yourusername/exoplanet-umap-analysis.git
 
-Future improvements will include:
+cd exoplanet-umap-analysis
 
-- modular `src/` structure  
-- fixed random seeds  
-- configuration-driven experiments  
-- standardized evaluation pipeline  
-- full environment specification (`requirements.txt`)  
+pip install -r requirements.txt
+
+python main.py
+```
 
 ---
 
-## Research Direction
+## Research Areas
 
-This work aligns with:
+* Scientific Machine Learning
+* Unsupervised Learning
+* Representation Learning
+* Manifold Learning
+* Computational Astrophysics
+* Exoplanet Science
+* Explainable AI
+* Physics-Informed Machine Learning
 
-- Scientific machine learning  
-- Unsupervised representation learning  
-- Manifold learning in physical systems  
-- High-dimensional astrophysical data analysis  
-- Exoplanet population structure discovery
+---
 
 ## Conclusion
 
-This work demonstrates that nonlinear representation learning methods, particularly UMAP, can uncover stable and structured organization in high-dimensional exoplanet parameter spaces. Across multiple evaluation criteria—including clustering quality, stability across runs, and physics-consistency alignment—UMAP consistently outperforms linear baselines such as PCA and provides more globally coherent structure than t-SNE.
+This study provides evidence that exoplanet populations exhibit latent nonlinear structure that is difficult to observe using traditional linear methods.
 
-A key finding is that the learned structure is not only geometrically stable but also partially aligned with underlying physical properties of exoplanets, suggesting that the dataset contains intrinsic nonlinear relationships that are better captured through manifold learning techniques.
+Among the investigated approaches, UMAP offers the strongest balance between clustering quality, stability, and physical interpretability. The results suggest that manifold learning provides a powerful framework for uncovering hidden organization within exoplanet parameter space and may serve as a useful tool for future astrophysical discovery.
 
-However, the results also highlight an important trade-off between geometric clustering quality and physical interpretability. While physics-informed embeddings improve alignment with domain-relevant features, they may slightly reduce compactness in latent space. This suggests that future approaches should consider hybrid objectives that jointly optimize geometric structure and physical constraints.
+More broadly, the project demonstrates how Scientific Machine Learning can be used not only to predict outcomes but also to reveal previously unobserved structure in complex physical systems.
 
-Overall, the results support the hypothesis that exoplanet populations exhibit latent nonlinear manifold structure that can be partially recovered through unsupervised representation learning, making this a promising direction for scientific machine learning in astrophysical discovery tasks.
+---
 
+## Citation
+
+```bibtex
+@software{worku2026umap_exoplanets,
+  author = {Samuel Worku},
+  title = {PAGER: A Physics-Audited Exoplanet Follow-up Prioritisation Framework.}
+  year = {2026},
+  url = {https://github.com/yourusername/exoplanet-umap-analysis}
+}
+```
