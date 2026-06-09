@@ -4,10 +4,6 @@
 
 ---
 
-<p align="center">
-<img src="figures/banner.png" width="1000" alt="Exoplanet manifold learning workflow banner">
-</p>
-
 ## Key Result
 
 UMAP consistently reveals stable nonlinear structure within exoplanet parameter space that is not captured by PCA and is more globally coherent than t-SNE.
@@ -329,18 +325,6 @@ More broadly, the project demonstrates how Scientific Machine Learning can be us
 
 ---
 
-## Citation
-
-```bibtex
-@software{worku2026umap_exoplanets,
-author = {Samuel Worku},
-title = {UMAP-Based Representation Learning and Clustering for Exoplanet Population Structure Discovery},
-year = {2026},
-url = {https://github.com/yourusername/exoplanet-umap-analysis}
-}
-```
-
----
 
 ## Citation
 
