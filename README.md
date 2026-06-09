@@ -199,7 +199,7 @@ The results indicate strong reproducibility and stability of the learned manifol
 
 ### t-SNE Representation
 
-![t-SNE embedding](results/figures/tsne_embedding.png)
+![t-SNE embedding](results/figures/t-sne_embedding.png)
 
 ### PCA, UMAP, and t-SNE Representation Comparison
 
