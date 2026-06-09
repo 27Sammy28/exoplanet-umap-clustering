@@ -193,27 +193,19 @@ The results indicate strong reproducibility and stability of the learned manifol
 
 This repository includes a combined visual comparison of PCA, UMAP, and t-SNE embeddings.
 
-<p align="center">
-  <img src="figures/pca_umap_tsne_comparison.png" width="850" alt="PCA, UMAP, and t-SNE comparison for exoplanet representation learning">
-</p>
+![PCA, UMAP, and t-SNE comparison](figures/readme/pca_umap_tsne_comparison.png)
 
 ### UMAP Representation with KNN Decision Geometry
 
-<p align="center">
-  <img src="figures/fig6_umap_knn_publication.png" width="700" alt="UMAP representation with KNN decision geometry">
-</p>
+![UMAP representation with KNN decision geometry](figures/readme/umap_knn_geometry.png)
 
 ### Habitable-Subset UMAP Representation
 
-<p align="center">
-  <img src="figures/umap_habitable_subset.png" width="700" alt="UMAP representation of conservative and optimistic habitable candidates">
-</p>
+![UMAP representation of conservative and optimistic habitable candidates](figures/readme/umap_habitable_subset.png)
 
 ### Physics-Audit Distribution
 
-<p align="center">
-  <img src="figures/physics_habitability_distribution.png" width="700" alt="Physics-informed habitability distribution">
-</p>
+![Physics-informed habitability distribution](figures/readme/physics_habitability_distribution.png)
 
 ---
 
