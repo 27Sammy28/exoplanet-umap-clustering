@@ -4,33 +4,48 @@
 
 ---
 
+<p align="center">
+<img src="figures/banner.png" width="1000" alt="Exoplanet manifold learning workflow banner">
+</p>
+
+## Key Result
+
+UMAP consistently reveals stable nonlinear structure within exoplanet parameter space that is not captured by PCA and is more globally coherent than t-SNE.
+
+Across multiple random seeds and evaluation metrics, UMAP achieved:
+
+- **Silhouette Score:** 0.48
+- **Davies--Bouldin Index:** 0.69
+- **Physics Consistency Score:** 0.28
+
+These results suggest that exoplanet populations occupy partially separable nonlinear manifolds that can be recovered through unsupervised representation learning.
+
+## Highlights
+
+- ✅ UMAP-based exoplanet manifold learning
+- ✅ Physics-informed representation analysis
+- ✅ Stability evaluation across random seeds
+- ✅ Comparison against PCA and t-SNE
+- ✅ Scientific Machine Learning workflow
+- ✅ Reproducible research pipeline
+
+## Scientific Hypothesis
+
+If exoplanet populations are governed by shared formation and evolutionary processes, then planets should occupy structured regions of parameter space rather than being randomly distributed.
+
+A successful manifold-learning representation should therefore reveal stable geometric organization that remains reproducible across embeddings and aligns with known physical properties.
+
+---
+
 ## Scientific Motivation
 
 The discovery of thousands of exoplanets has transformed planetary science into a data-rich field. As observational surveys continue to expand, understanding how planetary systems are organized within high-dimensional parameter space has become an increasingly important challenge.
 
 Traditional approaches often rely on predefined classifications or linear statistical techniques, which may fail to capture complex nonlinear relationships among planetary and stellar properties.
 
-This project investigates whether exoplanet populations exhibit an underlying nonlinear manifold structure that can be recovered through unsupervised representation learning.
+This work explores whether observed exoplanet populations occupy an intrinsic low-dimensional manifold embedded within high-dimensional astrophysical parameter space.
 
-Rather than focusing only on prediction, the goal is scientific discovery: uncovering latent geometric organization within exoplanet datasets and evaluating whether this organization corresponds to physically meaningful planetary regimes.
-
----
-
-## Research Question
-
-> Do exoplanet populations exhibit stable nonlinear manifold structure that can be recovered through unsupervised representation learning methods beyond traditional linear dimensionality reduction?
-
----
-
-## Main Scientific Finding
-
-The results suggest that exoplanets are not uniformly distributed throughout parameter space.
-
-Across multiple experiments and embedding methods, UMAP consistently reveals stable low-dimensional structure that is significantly less apparent under linear projection methods such as PCA.
-
-The findings provide evidence that exoplanet populations occupy partially separable nonlinear regions shaped by relationships among planetary and stellar properties.
-
-Furthermore, incorporating domain-informed constraints improves astrophysical interpretability, highlighting the potential of physics-aware machine learning for scientific discovery.
+By combining nonlinear representation learning, clustering analysis, and physics-based evaluation, the project investigates whether latent geometric structure can provide insight into planetary population organization beyond traditional classification schemes.
 
 ---
 
@@ -63,31 +78,31 @@ Furthermore, incorporating domain-informed constraints improves astrophysical in
 
 ```text
 Exoplanet Catalog
-        │
-        ▼
+│
+▼
 Data Preprocessing
-        │
-        ▼
+│
+▼
 Feature Engineering
-        │
-        ▼
+│
+▼
 Feature Scaling
-        │
-        ▼
+│
+▼
 Representation Learning
 (PCA / t-SNE / UMAP)
-        │
-        ▼
+│
+▼
 Latent Embedding Space
-        │
-        ▼
+│
+▼
 Clustering Analysis
 (K-Means)
-        │
-        ▼
+│
+▼
 Robustness Evaluation
-        │
-        ▼
+│
+▼
 Scientific Interpretation
 ```
 
@@ -214,6 +229,7 @@ This repository includes a combined visual comparison of PCA, UMAP, and t-SNE em
 
 ---
 
+
 ## Scientific Significance
 
 This work contributes to the growing field of Scientific Machine Learning (SciML), where machine learning is used not only for prediction but also for understanding scientific systems.
@@ -310,6 +326,19 @@ This study provides evidence that exoplanet populations exhibit latent nonlinear
 Among the investigated approaches, UMAP offers the strongest balance between clustering quality, stability, and physical interpretability. The results suggest that manifold learning provides a powerful framework for uncovering hidden organization within exoplanet parameter space and may serve as a useful tool for future astrophysical discovery.
 
 More broadly, the project demonstrates how Scientific Machine Learning can be used not only to predict outcomes but also to reveal previously unobserved structure in complex physical systems.
+
+---
+
+## Citation
+
+```bibtex
+@software{worku2026umap_exoplanets,
+author = {Samuel Worku},
+title = {UMAP-Based Representation Learning and Clustering for Exoplanet Population Structure Discovery},
+year = {2026},
+url = {https://github.com/yourusername/exoplanet-umap-analysis}
+}
+```
 
 ---
 
