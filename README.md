@@ -189,11 +189,23 @@ The results indicate strong reproducibility and stability of the learned manifol
 
 ## Visual Comparison
 
+### PCA Representation
+
+![PCA embedding](figures/readme/pca_embedding.png)
+
+### UMAP Representation
+
+![UMAP embedding](figures/readme/umap_embedding.png)
+
+### t-SNE Representation
+
+![t-SNE embedding](figures/readme/tsne_embedding.png)
+
 ### PCA, UMAP, and t-SNE Representation Comparison
 
 This repository includes a combined visual comparison of PCA, UMAP, and t-SNE embeddings.
 
-![PCA, UMAP, and t-SNE comparison](figures/readme/pca_embedding.png.png)
+![PCA, UMAP, and t-SNE comparison](figures/readme/pca_umap_tsne_comparison.png)
 
 ### UMAP Representation with KNN Decision Geometry
 
